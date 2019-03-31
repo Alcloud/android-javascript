@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Forschungsprojekt B</string>
+
+    <!-- default bluetooth names of the BLE devices -->
+    <string name="pref_device_glucometer">Accu-Chek</string>
+    <string name="pref_device_weightscale">A&amp;D_UC-352BLE</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_camera">Camera</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_vital_weight">Weight</string>
+    <string name="rangeZoom">Kg</string>
+    <string name="name_vital_steps">Steps</string>
+    <string name="zoomTextView">Choose period</string>
+    <string name="toast_zoom">There is no data. Please use your device to create a new values</string>
+    <string name="vital_toolbar_name">Vital and Activity Data</string>
+    <string name="zoom_weight_toolbar_name">Weight</string>
+    <string name="name_diary_blood">Average Blood Sugar</string>
+    <string name="name_diary_HBA1c">HBA1c</string>
+    <string name="checkbox_new_data">Notify about new data</string>
+    <string name="checkbox_contacts">Registered contacts may add data without explicit authorization</string>
+    <string name="textview_glucometer">Glucometer</string>
+    <string name="textview_ready">ready to connect</string>
+    <string name="textview_connected">connected</string>
+    <string name="textview_deviceNotFound">Device not found. Please turn on your device or click on search and try again.</string>
+    <string name="textview_deviceFound"> found. Disconnected.</string>
+    <string name="textview_paring_problem">Paring problem. Please try again.</string>
+    <string name="textview_devicePaired"> Connected.</string>
+    <string name="textview_digital_scale">Digital Scale</string>
+    <string name="textview_step_count">Step Counter</string>
+    <string name="diary_toolbar_devices">My Devices</string>
+    <string name="diary_toolbar_blood">Average blood sugar</string>
+    <string name="document_toolbar">Document name</string>
+    <string name="diary_toolbar_weight">Weight</string>
+    <string name="toolbar_signIn">Sign in</string>
+    <string name="diary_toolbar_event">Event</string>
+    <string name="event_toolbar">Event</string>
+    <string name="error_clinical_list">There is no document found</string>
+    <string name="paring">Paring</string>
+    <string name="search">Search</string>
+    <string name="event_list">Event list</string>
+    <string name="protocol">Protocol</string>
+    <string name="revoke_consent">Revoke consent</string>
+    <string name="devices">Devices</string>
+    <string name="recover_account">Recover account</string>
+    <string name="reject">Reject</string>
+    <string name="allow">Allow</string>
+    <string name="event_void">Create a custom ArrayAdapter,apply the object(Having two items) array to the custom adapter, and feed it to getListView.setAdapter.
+    Override the ArrayAdapters getView method to apply your name strings to TextViews in your custom list row view.
+    Following Snippet will help you.</string>
+    <string name="action_address_book">Manage address book</string>
+    <string name="textview_diabetologist">Diabetologist</string>
+    <string name="textview_doctor">Doctor</string>
+    <string name="textview_not_registered">not registered</string>
+    <string name="textview_select">select from</string>
+    <string name="textview_family">Family doctor</string>
+    <string name="extend_conf">Extend configuration</string>
+    <string name="revoke">Revoke Consent</string>
+    <string name="accept">Accept</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="diary_toolbar_name">Diary</string>
+    <string name="checkbox_revoke">Upon consent revocation all data in your health record will be deleted. You may request a copy of that data which will be send to you on an encrypted DVD. Send me a copy of my data(4€ for packaging).</string>
+    <string name="revoke_title">Consent revocation.</string>
+    <string name="app_title">FORSCHUNGSPROJEKT TEIL B</string>
+    <string name="version">Web + Native Technologie</string>
+    <string name="settings">Settings</string>
+    <string name="configuration">Native to Web</string>
+    <string name="about">About</string>
+    <string name="do_not_use">Do not use</string>
+    <string name="debug">Debug</string>
+    <string name="sign_out">Sign Out</string>
+</resources>

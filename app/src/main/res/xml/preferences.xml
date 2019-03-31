@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_weight_device_names"
+        android:title="Weight Device Names"
+        android:summary="BT-Devices the app should listen to."
+        android:defaultValue="@string/pref_device_weightscale" />
+    <EditTextPreference
+        android:key="pref_glucose_device_names"
+        android:title="Glucose Device Names"
+        android:summary="BT-Devices the app should listen to."
+        android:defaultValue="@string/pref_device_glucometer" />
+</PreferenceScreen>

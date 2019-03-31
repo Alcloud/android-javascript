@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/settings">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_conf"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/configuration" />
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_help_outline_black_24dp"
+                    android:title="@string/about" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/logout_icon"
+                    android:title="@string/sign_out" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
