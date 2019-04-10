@@ -1,7 +1,6 @@
 package eu.credential.app.patient.ui.settings;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -18,16 +17,10 @@ import android.widget.Toast;
 
 import com.example.administrator.credential_v020.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 
 import eu.credential.app.patient.integration.model.GlucoseMeasurement;
@@ -89,7 +82,7 @@ public class DevicesActivity extends AppCompatActivity implements WithCollectorS
         });
 
         currentCounter = 0;
-        measurementMap = Collections.synchronizedMap(new TreeMap<Integer, Measurement>());
+        measurementMap = Collections.synchronizedMap(new TreeMap<>());
 
         myWebView.addJavascriptInterface(new JavaScriptInterface(), JAVASCRIPT_OBJ);
         WebView.setWebContentsDebuggingEnabled(true);
@@ -216,101 +209,6 @@ public class DevicesActivity extends AppCompatActivity implements WithCollectorS
         public void textFromWeb(String fromWeb) {
             textWebView.setText(fromWeb);
         }
-    }
-
-    /**
-     * This method create a new JSON element with glucose measurement values.
-     */
-    private String setGlucoseInPHRDocument(String sequenceNumber, String concentration, String unit,
-                                           String fluidType, String sampleLocation, String sensorStatus,
-                                           String deviceTime, String receiveTime) {
-        return "{\n" +
-                "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n" +
-                "  \"title\": \"Glucose Measurement\",\n" +
-                "  \"type\": \"object\",\n" +
-                "  \"properties\": {\n" +
-                "    \"sequenceNumber\": {\n" +
-                "      \"description\": \"internal measurement id given by the device\",\n" +
-                "      \"value\": \"" + sequenceNumber + "\",\n" +
-                "      \"type\": \"integer\",\n" +
-                "      \"minimum\": 0\n" +
-                "    },\n" +
-                "    \"deviceTime\": {\n" +
-                "      \"description\": \"ISO time string given by measurement device\",\n" +
-                "      \"value\": \"" + deviceTime + "\",\n" +
-                "      \"type\": \"string\"\n" +
-                "    },\n" +
-                "    \"receiveTime\": {\n" +
-                "      \"description\": \"ISO time string, stating when the app received measurement from device\",\n" +
-                "      \"value\": \"" + receiveTime + "\",\n" +
-                "      \"type\": \"string\"\n" +
-                "    },\n" +
-                "    \"concentration\": {\n" +
-                "      \"description\": \"how much glucose the device has measured in the given unit\",\n" +
-                "      \"value\": \"" + concentration + "\",\n" +
-                "      \"type\": \"number\",\n" +
-                "      \"minimum\": 0\n" +
-                "    },\n" +
-                "    \"unit\": {\n" +
-                "      \"description\": \"physical unit describing the glucose concentration\",\n" +
-                "      \"value\": \"" + unit + "\",\n" +
-                "      \"enum\": [\n" +
-                "        \"kg/L\",\n" +
-                "        \"mol/L\"\n" +
-                "      ]\n" +
-                "    },\n" +
-                "    \"fluidType\": {\n" +
-                "      \"description\": \"fluid type delivered to device\",\n" +
-                "      \"value\": \"" + fluidType + "\",\n" +
-                "      \"enum\": [\n" +
-                "        \"Capillary Whole blood\",\n" +
-                "        \"Capillary Plasma\",\n" +
-                "        \"Venous Whole blood\",\n" +
-                "        \"Venous Plasma\",\n" +
-                "        \"Arterial Whole blood\",\n" +
-                "        \"Arterial Plasma\",\n" +
-                "        \"Undetermined Whole blood\",\n" +
-                "        \"Undetermined Plasma\",\n" +
-                "        \"Interstitial Fluid (ISF)\",\n" +
-                "        \"Control Solution\"\n" +
-                "      ]\n" +
-                "    },\n" +
-                "    \"sampleLocation\": {\n" +
-                "      \"description\": \"body location the fluid was taken from\",\n" +
-                "      \"value\": \"" + sampleLocation + "\",\n" +
-                "      \"enum\": [\n" +
-                "        \"Finger\",\n" +
-                "        \"Alternate Site Test (AST)\",\n" +
-                "        \"Earlobe\",\n" +
-                "        \"Control solution\",\n" +
-                "        \"Sample Location value not available\"\n" +
-                "      ]\n" +
-                "    },\n" +
-                "    \"sensorStatus\": {\n" +
-                "      \"description\": \"technical annunciations by the measurement device\",\n" +
-                "      \"value\": \"" + sensorStatus + "\",\n" +
-                "      \"type\": \"array\",\n" +
-                "      \"uniqueItems\": true,\n" +
-                "      \"minItems\": 0,\n" +
-                "      \"items\": {\n" +
-                "        \"enum\": [\n" +
-                "          \"Device battery low at time of measurement\",\n" +
-                "          \"Sensor malfunction or faulting at time of measurement\",\n" +
-                "          \"Sample size for blood or control solution insufficient at time of measurement\",\n" +
-                "          \"Strip insertion error\",\n" +
-                "          \"Strip type incorrect for device\",\n" +
-                "          \"Sensor result higher than the device can process\",\n" +
-                "          \"Sensor result lower than the device can process\",\n" +
-                "          \"Sensor temperature too high for valid test/result at time of measurement\",\n" +
-                "          \"Sensor temperature too low for valid test/result at time of measurement\",\n" +
-                "          \"Sensor read interrupted because strip was pulled too soon at time of measurement\",\n" +
-                "          \"General device fault has occurred in the sensor\",\n" +
-                "          \"Time fault has occurred in the sensor and time may be inaccurate\"\n" +
-                "        ]\n" +
-                "      }\n" +
-                "    }\n" +
-                "  }\n" +
-                "}\n";
     }
 
     private void showToast(Map<Integer, Measurement> here) {

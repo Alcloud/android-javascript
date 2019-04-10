@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
 
         // services
         this.collectorService = null;
-        this.measurementMap = Collections.synchronizedMap(new TreeMap<Integer, Measurement>());
+        this.measurementMap = Collections.synchronizedMap(new TreeMap<>());
         this.currentCounter = 0;
     }
 
@@ -261,21 +261,11 @@ public class MainActivity extends AppCompatActivity
             aboutFragment.setCancelable(false);
             aboutFragment.show(fragmentManager, "Dialog!");
         }
-        //setFragment(fragmentClass);
         item.setChecked(true);
         setTitle(item.getTitle());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void setFragment(Class fragmentClass) {
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
     }
 }
